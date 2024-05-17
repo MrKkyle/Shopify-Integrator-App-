@@ -38,7 +38,6 @@ const Layout = () => {
   return (
     <>
         <div className = "navbar" id = "navbar">
-
             <div className = "dropdown">
                 <button onClick = {navigateToDashboard} className = "dropbtn">DashBoard</button>
             </div>
