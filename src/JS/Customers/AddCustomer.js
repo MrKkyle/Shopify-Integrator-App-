@@ -122,7 +122,7 @@ function Add_Customer()
         
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.post("http://localhost:8080/api/customers", JSON.stringify(Object),[], 'json')
+        $.post("http://api.integrator.com/api/customers", JSON.stringify(Object),[], 'json')
         .done(function( _data) 
         {
             console.log(_data);

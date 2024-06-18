@@ -34,7 +34,7 @@ function Products()
         /*  API INITIAL-REQUEST */
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/products?page=1", [], [])
+        $.get("http://api.integrator.com/api/products?page=1", [], [])
         .done(function( _data) 
         {
             if(_data == "")
@@ -61,7 +61,7 @@ function Products()
         document.getElementById("search").addEventListener("submit", function(e)
         {
 
-            $.get("http://localhost:8080/api/products/search?q=" + document.getElementsByName("search")[0].value,[],[], 'json')
+            $.get("http://api.integrator.com/api/products/search?q=" + document.getElementsByName("search")[0].value,[],[], 'json')
             .done(function( _data) 
             {
                 if(_data.length < 10)
@@ -96,7 +96,7 @@ function Products()
             {
                 const api_key = localStorage.getItem('api_key');
                 $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-                $.get("http://localhost:8080/api/products?page=1", [], [])
+                $.get("http://api.integrator.com/api/products?page=1", [], [])
                 .done(function( _data) 
                 {
                     let filter_button = document.getElementById("_filter");
@@ -135,7 +135,7 @@ function Products()
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/products?page=1", [], [])
+            $.get("http://api.integrator.com/api/products?page=1", [], [])
             .done(function( _data) 
             {
                 document.querySelector(".pan-main").remove();
@@ -173,7 +173,7 @@ function Products()
 
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/products?page=1", [], [])
+            $.get("http://api.integrator.com/api/products?page=1", [], [])
             .done(function( _data) 
             {
                 let filter_button = document.getElementById("_filter");
@@ -203,7 +203,7 @@ function Products()
                     /*  API  */
                     const api_key = localStorage.getItem('api_key');
                     $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-                    $.get("http://localhost:8080/api/products?page=1", [], [])
+                    $.get("http://api.integrator.com/api/products?page=1", [], [])
                     .done(function( _data) 
                     {
                         document.querySelector(".pan-main").remove();

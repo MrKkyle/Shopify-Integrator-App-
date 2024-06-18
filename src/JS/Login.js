@@ -30,7 +30,7 @@ function Login()
         message.style.display = "block";
 
         
-        $.post("http://localhost:8080/api/login", JSON.stringify(inputs),[], 'json')
+        $.post("http://api.integrator.com/api/login", JSON.stringify(inputs),[], 'json')
         .done(function( _data) 
         {
 
@@ -78,7 +78,7 @@ function Login()
         let message = document.getElementById("message");
         message.style.display = "block";
         
-        $.post("http://localhost:8080/api/register", JSON.stringify(inputs),[], 'json')
+        $.post("http://api.integrator.com/api/register", JSON.stringify(inputs),[], 'json')
         .done(function( _data) 
         {
 
@@ -120,7 +120,7 @@ function Login()
         let message = document.getElementById("message");
         message.style.display = "block";
 
-        $.post("http://localhost:8080/api/preregister", JSON.stringify(inputs),[], 'json')
+        $.post("http://api.integrator.com/api/preregister", JSON.stringify(inputs),[], 'json')
         .done(function( _data) 
         {
 
@@ -168,7 +168,7 @@ function Login()
 
             $.ajaxSetup({ xhrFields: { withCredentials: true }, dataType: 'jsonp'});
             /* Check done to see if user's cookie already exists */
-            $.get("http://localhost:8080/api/google/oauth2/login", [], [], 'json')
+            $.get("http://api.integrator.com/api/google/oauth2/login", [], [], 'json')
             .done(function( _data) 
             {
 
@@ -200,7 +200,7 @@ function Login()
             {
                 form.style.display = "none";
                 rain.style.display = "none";
-                window.location.href = 'http://localhost:8080/api/google/login';
+                window.location.href = 'http://api.integrator.com/api/google/login';
             }, 900);
             
         });

@@ -142,7 +142,7 @@ function Page2(props)
             let status = queue_img[qi].nextSibling.className;
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/queue/filter?type=" + type + "&status=" + status, [], [], 'json')
+            $.get("http://api.integrator.com/api/queue/filter?type=" + type + "&status=" + status, [], [], 'json')
             .done(function( _data) 
             {
                 console.log(_data);
@@ -201,7 +201,7 @@ function Page2(props)
         let graph_data = {};
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/queue/view", [], [], 'json')
+        $.get("http://api.integrator.com/api/queue/view", [], [], 'json')
         .done(function(_data) 
         {
             console.log(_data);

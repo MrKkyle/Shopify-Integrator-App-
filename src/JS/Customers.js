@@ -42,7 +42,7 @@ function Customers()
         ({
             headers: { 'Authorization': 'ApiKey ' + api_key}
         });
-        $.get("http://localhost:8080/api/customers?page=1", [], [])
+        $.get("http://api.integrator.com/api/customers?page=1", [], [])
         .done(function( _data) 
         {
             if(_data == "")
@@ -89,7 +89,7 @@ function Customers()
         /* SEARCH */
         document.getElementById("search").addEventListener("submit", function(e)
         {
-            $.get("http://localhost:8080/api/customers/search?q=" + document.getElementsByName("search")[0].value,[],[], 'json')
+            $.get("http://api.integrator.com/api/customers/search?q=" + document.getElementsByName("search")[0].value,[],[], 'json')
             .done(function( _data) 
             {
                 document.querySelector(".pan-main").remove();
@@ -119,7 +119,7 @@ function Customers()
             {
                 const api_key = localStorage.getItem('api_key');
                 $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-                $.get("http://localhost:8080/api/customers?page=1", [], [])
+                $.get("http://api.integrator.com/api/customers?page=1", [], [])
                 .done(function( _data) 
                 {
                     let filter_button = document.getElementById("_filter");
@@ -156,7 +156,7 @@ function Customers()
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/customers?page=1", [], [])
+            $.get("http://api.integrator.com/api/customers?page=1", [], [])
             .done(function( _data) 
             {
                 document.querySelector(".pan-main").remove();

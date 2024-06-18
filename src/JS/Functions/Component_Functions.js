@@ -15,7 +15,7 @@ export function Filter_Pagintation(index)
         let type = document.querySelector(".type").innerHTML;
         let vendor = document.querySelector(".vendor").innerHTML;
         let ahead = index + 1;
-        $.get("http://localhost:8080/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + ahead, [], [])
+        $.get("http://api.integrator.com/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + ahead, [], [])
         .done(function( _data) 
         {
             if(_data == "") { let next = document.getElementById("next"); next.style.cursor = "not-allowed"; next.disabled = true; } 
@@ -57,7 +57,7 @@ export function Filter_Pagintation(index)
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
+            $.get("http://api.integrator.com/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
             .done(function( _data) 
             {
 
@@ -92,7 +92,7 @@ export function Filter_Pagintation(index)
 
             let ahead = index + 1;
             /*  API  */
-            $.get("http://localhost:8080/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + ahead, [], [])
+            $.get("http://api.integrator.com/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + ahead, [], [])
             .done(function( _data) 
             {
                 if(_data == "") { let next = document.getElementById("next"); next.style.cursor = "not-allowed"; next.disabled = true; }  
@@ -123,7 +123,7 @@ export function Filter_Pagintation(index)
             index = index - 1;
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
+            $.get("http://api.integrator.com/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
             .done(function( _data) 
             {
                 document.querySelector(".pan-main").remove();
@@ -179,7 +179,7 @@ export function Filter_Pagintation(index)
 
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
+            $.get("http://api.integrator.com/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
             .done(function( _data) 
             {
 
@@ -224,7 +224,7 @@ export function Filter_Pagintation(index)
 
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
+            $.get("http://api.integrator.com/api/products/filter?type=" + type + "&vendor=" + vendor + "&category=" + category + "&page=" + index, [], [])
             .done(function( _data) 
             {
 

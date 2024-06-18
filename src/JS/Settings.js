@@ -39,7 +39,7 @@ function Settings()
 
             /* Api-Request for shopify locations & warehouses */
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get('http://localhost:8080/api/inventory/config', [], [])
+            $.get('http://api.integrator.com/api/inventory/config', [], [])
             .done(function( _data) 
             {
 
@@ -79,7 +79,7 @@ function Settings()
                     object.warehouse_name = select[0].options[select[0].selectedIndex].innerHTML;
                     object.shopify_warehouse_name = select[1].options[select[1].selectedIndex].innerHTML;
 
-                    $.post("http://localhost:8080/api/inventory/map", JSON.stringify(object), [], 'json')
+                    $.post("http://api.integrator.com/api/inventory/map", JSON.stringify(object), [], 'json')
                     .done(function( _data) 
                     {
                         let info = document.getElementById("info-message");
@@ -194,7 +194,7 @@ function Settings()
         /*  API INITIAL-REQUEST for APP_SETTINGS*/
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/settings", [], [])
+        $.get("http://api.integrator.com/api/settings", [], [])
         .done(function( _data) 
         {
             
@@ -296,7 +296,7 @@ function Settings()
         });
 
         /*  API INITIAL-REQUEST for SHOPIFY_SETTINGS*/
-        $.get("http://localhost:8080/api/shopify/settings", [], [])
+        $.get("http://api.integrator.com/api/shopify/settings", [], [])
         .done(function( _data) 
         {
             
@@ -400,7 +400,7 @@ function Settings()
 
         /* Restrictions Settings */
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/fetch/restriction", [], [], 'json')
+        $.get("http://api.integrator.com/api/fetch/restriction", [], [], 'json')
         .done(function( _data) 
         {
             
@@ -506,7 +506,7 @@ function Settings()
 
         /* Restrictions Settings */
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/push/restriction", [], [], 'json')
+        $.get("http://api.integrator.com/api/push/restriction", [], [], 'json')
         .done(function( _data) 
         {
 
@@ -816,7 +816,7 @@ function Settings()
 
             /* Fetch Restriction Put Setting */
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key}});
-            $.ajax({ type: 'PUT', url: "http://localhost:8080/api/fetch/restriction", contentType: 'json', data: JSON.stringify(fetch_restrict)})
+            $.ajax({ type: 'PUT', url: "http://api.integrator.com/api/fetch/restriction", contentType: 'json', data: JSON.stringify(fetch_restrict)})
             .done(function (_data) 
             {
                 let info = document.getElementById("info-message");
@@ -843,7 +843,7 @@ function Settings()
             });
 
             /* Push Restriction Put Setting */
-            $.ajax({ type: 'PUT', url: "http://localhost:8080/api/push/restriction", contentType: 'json', data: JSON.stringify(push_restrict)})
+            $.ajax({ type: 'PUT', url: "http://api.integrator.com/api/push/restriction", contentType: 'json', data: JSON.stringify(push_restrict)})
             .done(function (_data) 
             {
                 let info = document.getElementById("info-message");
@@ -871,7 +871,7 @@ function Settings()
             
             
             /* App Setting Put Request */
-            $.ajax({ type: 'PUT', url: "http://localhost:8080/api/settings", contentType: 'json', data: JSON.stringify(app_object)})
+            $.ajax({ type: 'PUT', url: "http://api.integrator.com/api/settings", contentType: 'json', data: JSON.stringify(app_object)})
             .done(function (_data) 
             {
                 let info = document.getElementById("info-message");
@@ -898,7 +898,7 @@ function Settings()
             });
 
             /* Shopify Setting Put Request */
-            $.ajax({ type: 'PUT', url: "http://localhost:8080/api/shopify/settings",
+            $.ajax({ type: 'PUT', url: "http://api.integrator.com/api/shopify/settings",
             contentType: 'json', data: JSON.stringify(_shopify_object)})
             .done(function (_data) 
             {
@@ -956,7 +956,7 @@ function Settings()
                 const api_key = localStorage.getItem('api_key');
                 $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
                 
-                $.post("http://localhost:8080/api/settings/webhook", JSON.stringify(domain), [], 'json')
+                $.post("http://api.integrator.com/api/settings/webhook", JSON.stringify(domain), [], 'json')
                 .done(function( _data) 
                 {
 
@@ -1007,7 +1007,7 @@ function Settings()
 
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.post("http://localhost:8080/api/inventory/warehouse?reindex=false", JSON.stringify(body), [], 'json')
+            $.post("http://api.integrator.com/api/inventory/warehouse?reindex=false", JSON.stringify(body), [], 'json')
             .done(function( _data) 
             {
                 let info = document.getElementById("info-message");
@@ -1103,7 +1103,7 @@ function Settings()
             main.style.display = "none";
             navigation.style.display = "none";
 
-            $.get("http://localhost:8080/api/inventory/map", [], [], 'json')
+            $.get("http://api.integrator.com/api/inventory/map", [], [], 'json')
             .done(function( _data) 
             {
                 let info = document.getElementById("info-message");

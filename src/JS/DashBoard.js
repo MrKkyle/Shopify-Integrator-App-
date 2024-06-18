@@ -45,7 +45,7 @@ function Dashboard()
                 xhrFields: { withCredentials: true },
                 dataType: "jsonp",
             });           
-            $.post("http://localhost:8080/api/logout", [], [], 'json')
+            $.post("http://api.integrator.com/api/logout", [], [], 'json')
             .done(function( _data) 
             {
                 console.log("logout");
@@ -75,7 +75,7 @@ function Dashboard()
         let graph_data = {};
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/stats/fetch", [], [], 'json')
+        $.get("http://api.integrator.com/api/stats/fetch", [], [], 'json')
         .done(function( _data) 
         {
             if(_data.amounts.length == "" && _data.hours == "")
@@ -100,7 +100,7 @@ function Dashboard()
 
         //Order Graph
         let graph_data2 = {};
-        $.get("http://localhost:8080/api/stats/orders?status=not_paid", [], [], 'json')
+        $.get("http://api.integrator.com/api/stats/orders?status=not_paid", [], [], 'json')
         .done(function(_data) 
         {
             if(_data == "")
@@ -122,7 +122,7 @@ function Dashboard()
         });
 
         let graph_data3 = {};
-        $.get("http://localhost:8080/api/stats/orders?status=paid", [], [], 'json')
+        $.get("http://api.integrator.com/api/stats/orders?status=paid", [], [], 'json')
         .done(function(_data) 
         {
             graph_data3 = _data;
@@ -215,7 +215,7 @@ function Dashboard()
         }, 200);
 
         /* Settings Notifications */
-        $.get("http://localhost:8080/api/inventory/warehouse", [], [], 'json')
+        $.get("http://api.integrator.com/api/inventory/warehouse", [], [], 'json')
         .done(function(_data) 
         {
             if(_data == "")
@@ -240,7 +240,7 @@ function Dashboard()
         });
 
         /* Products Notifications */
-        $.get("http://localhost:8080/api/products?page=1", [], [], 'json')
+        $.get("http://api.integrator.com/api/products?page=1", [], [], 'json')
         .done(function(_data) 
         {
             if(_data == "")
