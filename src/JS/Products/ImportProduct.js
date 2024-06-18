@@ -33,7 +33,7 @@ function Import_Product()
             
             let output_div = document.querySelector('.output');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key}, processData: false, contentType: "multipart/form-data", method: 'post', crossDomain: true, contentType: false});
-            $.post("http://localhost:8080/api/products/import", formData, [])
+            $.post("http://api.integrator.com/api/products/import", formData, [])
             .done(function( _data) 
             {
                 console.log(_data);

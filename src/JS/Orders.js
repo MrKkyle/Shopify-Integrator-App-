@@ -39,7 +39,7 @@ function Orders()
         ({
             headers: { 'Authorization': 'ApiKey ' + api_key}
         });
-        $.get("http://localhost:8080/api/orders?page=1", [], [])
+        $.get("http://api.integrator.com/api/orders?page=1", [], [])
         .done(function( _data) 
         {
             if(_data == "")
@@ -68,7 +68,7 @@ function Orders()
         document.getElementById("search").addEventListener("submit", function(e)
         {
 
-            $.get("http://localhost:8080/api/orders/search?q=" + document.getElementsByName("search")[0].value,[],[], 'json')
+            $.get("http://api.integrator.com/api/orders/search?q=" + document.getElementsByName("search")[0].value,[],[], 'json')
             .done(function( _data) 
             {
 
@@ -96,7 +96,7 @@ function Orders()
             {
                 const api_key = localStorage.getItem('api_key');
                 $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-                $.get("http://localhost:8080/api/orders?page=1", [], [])
+                $.get("http://api.integrator.com/api/orders?page=1", [], [])
                 .done(function( _data) 
                 {
                     let filter_button = document.getElementById("_filter");
@@ -152,7 +152,7 @@ function Orders()
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/order?page=1", [], [])
+            $.get("http://api.integrator.com/api/order?page=1", [], [])
             .done(function( _data) 
             {
                 document.querySelector(".pan-main").remove();

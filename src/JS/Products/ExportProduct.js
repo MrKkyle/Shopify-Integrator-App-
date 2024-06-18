@@ -12,7 +12,7 @@ function Export_Product()
         
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/products/export", [], [], 'json')
+        $.get("http://api.integrator.com/api/products/export", [], [], 'json')
         .done(function( _data) 
         {
             console.log(_data.message);

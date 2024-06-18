@@ -134,7 +134,7 @@ function Page1(props)
             let vendor = document.querySelector(".vendor").innerHTML;
             let next = document.getElementById("next");
 
-            $.get("http://localhost:8080/api/products/filter?type=" +type + "&" + "vendor="+ vendor +"&category="+category,[], [], 'json')
+            $.get("http://api.integrator.com/api/products/filter?type=" +type + "&" + "vendor="+ vendor +"&category="+category,[], [], 'json')
             .done(function( _data) 
             {
                 category = ""; type = ""; vendor = "";
@@ -220,7 +220,7 @@ function Page1(props)
 
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/shopify/fetch", [], [])
+            $.get("http://api.integrator.com/api/shopify/fetch", [], [])
             .done(function( _data) 
             {
                 fetch.disabled = false;
@@ -265,7 +265,7 @@ function Page1(props)
             
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.post("http://localhost:8080/api/shopify/sync", [], [])
+            $.post("http://api.integrator.com/api/shopify/sync", [], [])
             .done(function( _data) 
             {
                 push.disabled = false;

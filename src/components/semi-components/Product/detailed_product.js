@@ -244,7 +244,7 @@ function Detailed_product(props)
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key}, type: 'PUT' });
 
-            $.ajax({ type: 'PUT', url: "http://localhost:8080/api/products/" + id, 
+            $.ajax({ type: 'PUT', url: "http://api.integrator.com/api/products/" + id, 
             contentType: 'json', data: JSON.stringify(object)})
             .done(function (_data) 
             {

@@ -39,7 +39,7 @@ function Queue()
         /*  API INITIAL-REQUEST */
         const api_key = localStorage.getItem('api_key');
         $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-        $.get("http://localhost:8080/api/queue?page=1", [], [])
+        $.get("http://api.integrator.com/api/queue?page=1", [], [])
         .done(function( _data) 
         {
             if(_data == "")
@@ -81,7 +81,7 @@ function Queue()
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/queue?page=1", [], [])
+            $.get("http://api.integrator.com/api/queue?page=1", [], [])
             .done(function( _data) 
             {
                 if(document.querySelector(".pan-main") != null)
@@ -117,7 +117,7 @@ function Queue()
 
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/queue?page=1", [], [])
+            $.get("http://api.integrator.com/api/queue?page=1", [], [])
             .done(function( _data) 
             {
                 let filter_button = document.getElementById("_filter");
@@ -158,7 +158,7 @@ function Queue()
                     /*  API  */
                     const api_key = localStorage.getItem('api_key');
                     $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-                    $.get("http://localhost:8080/api/queue?page=1", [], [])
+                    $.get("http://api.integrator.com/api/queue?page=1", [], [])
                     .done(function( _data) 
                     {
                         if(document.querySelector(".pan-main") != null)

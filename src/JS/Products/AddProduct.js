@@ -96,7 +96,7 @@ function Add_Product()
             const api_key = localStorage.getItem('api_key');
             
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.post("http://localhost:8080/api/products", JSON.stringify(Object),[], 'json')
+            $.post("http://api.integrator.com/api/products", JSON.stringify(Object),[], 'json')
             .done(function( _data) 
             {
                 console.log(_data);
@@ -212,7 +212,7 @@ function Add_Product()
 
             /* Api-Request for shopify locations & warehouses */
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get('http://localhost:8080/api/inventory/config', [], [])
+            $.get('http://api.integrator.com/api/inventory/config', [], [])
             .done(function( _data) 
             {
                 console.log(_data);

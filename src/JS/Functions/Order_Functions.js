@@ -19,7 +19,7 @@ export function DetailedView()
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
-            $.get("http://localhost:8080/api/orders/" + id, [], [], 'json')
+            $.get("http://api.integrator.com/api/orders/" + id, [], [], 'json')
             .done(function(_data) 
             {   
 
@@ -148,7 +148,7 @@ export function Pagintation(index)
 
     let ahead = index + 1;
     /*  API  */
-    $.get('http://localhost:8080/api/orders?page=' + ahead, [], [])
+    $.get('http://api.integrator.com/api/orders?page=' + ahead, [], [])
     .done(function( _data) 
     {
 
@@ -198,7 +198,7 @@ export function Pagintation(index)
         {
             index = index + 1;
             /* Fetches the data from page, based on the page / index value */
-            const page = "http://localhost:8080/api/order?page=" + index;
+            const page = "http://api.integrator.com/api/order?page=" + index;
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
@@ -221,7 +221,7 @@ export function Pagintation(index)
 
             let ahead = index + 1;
             /*  API  */
-            $.get('http://localhost:8080/api/order?page=' + ahead, [], [])
+            $.get('http://api.integrator.com/api/order?page=' + ahead, [], [])
             .done(function( _data) 
             {
                 if(_data == "")
@@ -241,7 +241,7 @@ export function Pagintation(index)
         {
             index = index - 1;
             /* Fetches the data from page, based on the page / index value */
-            const page = "http://localhost:8080/api/order?page=" + index;
+            const page = "http://api.integrator.com/api/order?page=" + index;
 
             /*  API  */
             const api_key = localStorage.getItem('api_key');
@@ -283,7 +283,7 @@ export function Pagintation(index)
         {
             index = index + 1;
             /* Fetches the data from page, based on the page / index value */
-            const page = "http://localhost:8080/api/order?page=" + index;
+            const page = "http://api.integrator.com/api/order?page=" + index;
             /*  API  */
             const api_key = localStorage.getItem('api_key');
             $.ajaxSetup({ headers: { 'Authorization': 'ApiKey ' + api_key} });
@@ -311,7 +311,7 @@ export function Pagintation(index)
         {
             index = index - 1;
             /* Fetches the data from page, based on the page / index value */
-            const page = "http://localhost:8080/api/order?page=" + index;
+            const page = "http://api.integrator.com/api/order?page=" + index;
 
             /*  API  */
             const api_key = localStorage.getItem('api_key');
